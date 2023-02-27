@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChartView">
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="DonutView">
+        <attr name="donutValue" format="integer" />
+        <attr name="padding" format="integer" />
+    </declare-styleable>
+</resources>
