@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/AFragment">
+
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.example.customview.donutview.AFragment"
+        android:label="AFragment" />
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.example.customview.donutview.BFragment"
+        android:label="BFragment" />
+    <action android:id="@+id/action_global_BFragment" app:destination="@id/BFragment" />
+    <action android:id="@+id/action_global_AFragment" app:destination="@id/AFragment" />
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.example.customview.chartview.CFragment"
+        android:label="CFragment" /><action android:id="@+id/action_global_CFragment" app:destination="@id/CFragment"/>
+</navigation>

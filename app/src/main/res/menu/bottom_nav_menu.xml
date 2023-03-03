@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/donut_view_1"
+        android:title="DonutView1"
+        android:icon="@drawable/baseline_donut_large_24"
+        />
+    <item
+        android:id="@+id/donut_view_2"
+        android:title="DonutView2"
+        android:icon="@drawable/baseline_donut_small_24"
+        />
+    <item
+        android:id="@+id/bar_view"
+        android:title="BarView"
+        android:icon="@drawable/baseline_bar_chart_24"
+        />
+
+</menu>

@@ -17,6 +17,18 @@ import kotlin.math.roundToInt
 import kotlin.math.sin
 
 class DonutView : View {
+
+    private var value = 0
+    private var padding = 0.toDp()
+    private var isMoreThan90 = false
+
+    // Indicator
+    private var indicatorX = 0f
+    private var indicatorY = 0f
+    private var indicatorRadius = 50f
+    private var lastX = 0f
+    private var lastY = 0f
+
     constructor(context: Context?) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
 
@@ -65,18 +77,6 @@ class DonutView : View {
         style = Paint.Style.STROKE
         strokeCap = Paint.Cap.ROUND
     }
-
-
-    private var value = 90
-    private var padding = 16.toDp()
-    private var isMoreThan90 = false
-
-    // Indicator
-    private var indicatorX = 0f
-    private var indicatorY = 0f
-    private var indicatorRadius = 50f
-    private var lastX = 0f
-    private var lastY = 0f
 
     init {
 
