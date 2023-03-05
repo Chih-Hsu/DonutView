@@ -14,16 +14,7 @@ import com.example.customview.ext.toPx
 class ChartView : View {
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-//        if (attrs != null) {
-//            val attrArray = intArrayOf(android.R.attr.textColor)
-//            val typedArray = context.theme.obtainStyledAttributes(attrs, attrArray, 0, 0)
-//
-//            val textColor = typedArray.getColor(0, Color.BLACK)
-//            valueTextPaint.color = textColor
-//            labelTextPaint.color = textColor
-//
-//            typedArray.recycle()
-//        }
+
         if (attrs != null) {
             val attrArray = R.styleable.ChartView
             val typedArray = context.theme.obtainStyledAttributes(attrs, attrArray, 0, 0)
@@ -37,6 +28,7 @@ class ChartView : View {
                 context.theme.obtainStyledAttributes(attrs, nativeAttrArray, 0, 0)
             val nativeTextColor = nativeTypedArray.getColor(0, Color.BLACK)
             labelTextPaint.color = nativeTextColor
+            nativeTypedArray.recycle()
 
         }
     }
@@ -149,7 +141,7 @@ class ChartView : View {
         barDatas.forEachIndexed { index, barData ->
             val x = valueWidth + index * (barWidth + barDistance) + barWidth / 2
             val fontMetrics = labelTextPaint.fontMetrics
-            val y = height - fontMetrics.bottom + textPadding
+            val y = height - fontMetrics.bottom + textPadding - 50f
             canvas.drawText(barData.name, x, y, labelTextPaint)
         }
     }
@@ -158,13 +150,13 @@ class ChartView : View {
 //        return 50.toPx().toFloat()
         val rect = Rect()
         valueTextPaint.getTextBounds(maxValue.toString(), 0, maxValue.toString().length, rect)
-        return rect.width().toFloat()
+        return rect.width().toFloat() + 50f
     }
 
     private fun getLabelHeight(): Float {
 //        return 50.toPx().toFloat()
         val metrics = labelTextPaint.fontMetrics
         Log.d("Custt", "top = ${metrics.top}  bottom = ${metrics.bottom}")
-        return metrics.bottom - metrics.top
+        return metrics.bottom - metrics.top + 50f
     }
 }
